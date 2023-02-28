@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "app_name": "homesearch",
+  "autogen_policy": false,
+  "iam_policy_file": "policy.json",
+  "lambda_memory_size": 2048,
+  "lambda_timeout": 8,
+  "stages": {
+    "development": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "DYNAMO_TABLE": "test-rets-search"
+      }
+    },
+    "test": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "DYNAMO_TABLE": "test-rets-search"
+      }
+    },
+    "production": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "DYNAMO_TABLE": "prod-rets-search"
+      }
+    },
+    "freelancer": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "DYNAMO_TABLE": "test-rets-search"
+      }
+    }
+  }
+}
